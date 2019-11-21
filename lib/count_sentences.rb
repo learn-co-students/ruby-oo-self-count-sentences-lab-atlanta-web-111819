@@ -15,12 +15,7 @@ class String
   end
 
   def count_sentences
-    breaks = self.split(/[.?!]/)
-    breaks.select! {|word| word != ""}
-    
-    if breaks.count == 7
-      binding.pry
-    end
-    breaks.count
+    split_up = self.split(/[.?!]/)
+    split_up.count {|sentence| sentence != ""}
   end
 end
